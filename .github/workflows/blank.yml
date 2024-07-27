@@ -1,0 +1,101 @@
+print("Welcome to the Steve Jobs Family!")
+print("You are a distant family member of a rich billionaire who has just passed away, leaving this mansion to you.")
+print("As the newfound owner, you decide to pay a visit to the mansion.")
+print("The house is dated, creaky, and falling apart. You walk in the front door.")
+print("Do you want to enter the living room, dining room, or bedroom?")
+print("Notes: don't add 'the' and no caps")
+
+roomChoice = input("> ").lower()
+
+if roomChoice == "living room":
+    print("You enter the living room.")
+    print("As you walk in, you see a sleeping pitbull guarding a diamond called the legendary Koh-I-Noor.")
+    print("Do you want to steal the jewelry from the pitbull?")
+
+    pitBullChoice = input("> ").lower()
+
+    if pitBullChoice == "yes":
+        print("You attempt to steal the jewelry, but it wakes up and rips you to shreds.")
+        print("You are now dead.")
+    elif pitBullChoice == "no":
+        print("You decided not to steal the dog's jewelry.")
+        print("You turn around and leave the house safely.")
+    else:
+        print("Invalid choice. Please enter yes or no.")
+
+elif roomChoice == "dining room":
+    print("You chose to go into the dining room.")
+    print("As you walk in, you see a vase on the table.")
+    print("Do you want to open the vase?")
+
+    vaseChoice = input("> ").lower()
+
+    if vaseChoice == "yes":
+        print("You open the vase and find gold!")
+    elif vaseChoice == "no":
+        print("You decide not to open the shiny vase.")
+        print("As you turn to leave, you hear a cracking sound coming from the corner.")
+        print("A dark figure with glowing red eyes launches at you, knocking you unconscious.")
+        print("You wake up in your bed. It was all a dream.")
+    else:
+        print("Invalid choice. Please enter yes or no.")
+
+elif roomChoice == "bedroom":
+    print("You chose to go into the bedroom.")
+    print("As you walk in, you see a big closet.")
+    print("Do you want to open the closet?")
+
+    closetChoice = input("> ").lower()
+
+    if closetChoice == "yes":
+        print("You open the closet and find a dark figure.")
+        print("What is your running speed in mph?")
+
+        try:
+            runningSpeed = float(input("> "))
+        except ValueError:
+            print("Invalid input. Please enter a valid number for running speed.")
+            exit()
+
+        maxSpeed = 30
+
+        if runningSpeed > maxSpeed:
+            print(f"Your running speed ({runningSpeed} mph) exceeds the maximum allowed speed ({maxSpeed} mph).")
+            print("You trip and fall, allowing the dark figure to catch you. You are doomed!")
+        else:
+            print(f"You start running from the dark figure with a speed of {runningSpeed} mph.")
+
+            darkFigureSpeed = 11
+
+            if runningSpeed < darkFigureSpeed:
+                print("The dark figure catches up to you and kills you!")
+                print("You have lost.")
+            else:
+                print("You manage to outrun the dark figure and escape safely.")
+    elif closetChoice == "no":
+        print("You decide not to open the closet.")
+        print("As you turn to leave, you see a diamond ring on the floor worth $100M!")
+        print("You suddenly faint.")
+        print("You wake up in your bed. It was all a dream.")
+    else:
+        print("Invalid choice for closet. Please enter yes or no.")
+else:
+    print("Invalid choice for room. Please enter a valid room choice.")
+
+while True:
+    exitChoice = input("Do you want to exit the game? (yes/no): ").lower()
+
+    if exitChoice == "yes":
+        confirmExit = input("Are you sure you want to exit? (yes/no): ").lower()
+        if confirmExit == "yes":
+            print("You have exited the game.")
+            break
+        else:
+            continue  
+    elif exitChoice == "no":
+        print("Restarting the game.")
+        break
+    else:
+        print("Invalid choice. Please enter yes or no.")
+        continue
+        
